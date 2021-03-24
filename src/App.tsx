@@ -1,6 +1,6 @@
 function App() {
   return (
-    <>Hola, Mundo!</>
+    <>Eighty percent of success is showing up.</>
   );
 }
 

@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('muestra hola mundo', () => {
+test('muestra una frase', () => {
   render(<App />);
-  const linkElement = screen.getByText(/hola, mundo/i);
+  const linkElement = screen.getByText(/Eighty percent of success is showing up./i);
   expect(linkElement).toBeInTheDocument();
 });
