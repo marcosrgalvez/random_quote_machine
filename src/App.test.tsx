@@ -32,14 +32,12 @@ describe("muestra los elementos de Random Quote Machine", () => {
 describe("Funcionalidad de los elementos de Random Quote Machine", () => {
   it('al hacer click en new quote, muestra una nueva frase', () => {
     render(<App />);
-    const quoteTextElement = screen.getByTitle('quote-text');
-    const quoteText = quoteTextElement.textContent === null ? '' : quoteTextElement.textContent  
     const newQuoteElement = screen.getByRole('button', { name: /New Quote/i});
     userEvent.click(newQuoteElement)
-    expect(screen.queryByText(quoteText)).not.toBeInTheDocument();
-    expect(screen.getByTitle('quote-text')).toBeInTheDocument();
+    const quoteElement = screen.getByText(/Winning isn’t everything, but wanting to win is./i);
+    expect(quoteElement).toBeInTheDocument();
   });
-  
+
   it('al hacer click en new quote, muestra un nuevo autor', () => {
     render(<App />);
     const newQuoteElement = screen.getByRole('button', { name: /New Quote/i});

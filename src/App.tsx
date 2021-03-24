@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-      <p title="quote-text">{quote.text}</p>
+      <p>{quote.text}</p>
       <p>{quote.author}</p>
       <button onClick={getNewQuote}>New Quote</button>
       <a title="Tweet this quote!"></a>
