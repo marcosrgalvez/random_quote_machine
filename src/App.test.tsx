@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import App from './App';
 
@@ -18,8 +18,8 @@ describe("muestra los elementos de Random Quote Machine", () => {
 
   it('muestra un "boton" con la frase New quote', () => {
     render(<App />);
-    const newQuoteButton = screen.getByRole('button', { name: /New Quote/i});
-    expect(newQuoteButton).toBeInTheDocument();
+    const newQuoteElement = screen.getByRole('button', { name: /New Quote/i});
+    expect(newQuoteElement).toBeInTheDocument();
   });
 
   it('muestra un elemento con titulo Tweet this quote', () => {
