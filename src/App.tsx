@@ -1,7 +1,8 @@
 function App() {
   return (
-    <>Eighty percent of success is showing up.
-      <span>Woody Allen</span>
+    <>
+      <p>Eighty percent of success is showing up.</p>
+      <p>Woody Allen</p>
       <button>New Quote</button>
       <a title="Tweet this quote!"></a>
     </>
