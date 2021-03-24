@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event'
 import App from './App';
 
 
@@ -25,5 +26,15 @@ describe("muestra los elementos de Random Quote Machine", () => {
     render(<App />);
     const tweetElement = screen.getByTitle(/Tweet this quote!/i);
     expect(tweetElement).toBeInTheDocument();
+  });
+})
+
+describe("Funcionalidad de los elementos de Random Quote Machine", () => {
+  it('al hacer click en new quote, muestra una nueva frase', () => {
+    render(<App />);
+    const newQuoteElement = screen.getByRole('button', { name: /New Quote/i});
+    userEvent.click(newQuoteElement)
+    const quoteElement = screen.getByText(/Winning isn’t everything, but wanting to win is./i);
+    expect(quoteElement).toBeInTheDocument();
   });
 })
