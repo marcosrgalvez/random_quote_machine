@@ -37,4 +37,13 @@ describe("Funcionalidad de los elementos de Random Quote Machine", () => {
     const quoteElement = screen.getByText(/Winning isn’t everything, but wanting to win is./i);
     expect(quoteElement).toBeInTheDocument();
   });
+
+  it('al hacer click en new quote, muestra un nuevo autor', () => {
+    render(<App />);
+    const newQuoteElement = screen.getByRole('button', { name: /New Quote/i});
+    userEvent.click(newQuoteElement)
+    const authorElement = screen.getByText(/Vince Lombardi/i);
+    expect(authorElement).toBeInTheDocument();
+  });
+
 })
