@@ -3,14 +3,14 @@ import App from './App';
 
 test('muestra una frase', () => {
   render(<App />);
-  const linkElement = screen.getByText(/Eighty percent of success is showing up./i);
-  expect(linkElement).toBeInTheDocument();
+  const quoteElement = screen.getByText(/Eighty percent of success is showing up./i);
+  expect(quoteElement).toBeInTheDocument();
 });
 
 test('muestra el autor de la frase', () => {
   render(<App />);
-  const linkElement = screen.getByText(/Woody Allen/i);
-  expect(linkElement).toBeInTheDocument();
+  const authorElement = screen.getByText(/Woody Allen/i);
+  expect(authorElement).toBeInTheDocument();
 });
 
 test('muestra un "boton" con la frase New quote', () => {
