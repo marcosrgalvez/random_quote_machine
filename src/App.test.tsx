@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import App from './App';
 
 
-describe("muestra los elementos de Random Quote Machine", () => {
+describe("Random quote machine", () => {
   it('muestra una frase', () => {
     render(<App />);
     const quoteElement = screen.getByText(/Eighty percent of success is showing up./i);
@@ -16,21 +16,7 @@ describe("muestra los elementos de Random Quote Machine", () => {
     expect(authorElement).toBeInTheDocument();
   });
 
-  it('muestra un "boton" con la frase New quote', () => {
-    render(<App />);
-    const newQuoteElement = screen.getByRole('button', { name: /New Quote/i});
-    expect(newQuoteElement).toBeInTheDocument();
-  });
-
-  it('muestra un elemento con titulo Tweet this quote', () => {
-    render(<App />);
-    const tweetElement = screen.getByTitle(/Tweet this quote!/i);
-    expect(tweetElement).toBeInTheDocument();
-  });
-})
-
-describe("Funcionalidad de los elementos de Random Quote Machine", () => {
-  it('al hacer click en new quote, muestra una nueva frase', () => {
+  it('actualiza la frase', () => {
     render(<App />);
     const newQuoteElement = screen.getByRole('button', { name: /New Quote/i});
     userEvent.click(newQuoteElement)
@@ -38,12 +24,11 @@ describe("Funcionalidad de los elementos de Random Quote Machine", () => {
     expect(quoteElement).toBeInTheDocument();
   });
 
-  it('al hacer click en new quote, muestra un nuevo autor', () => {
+  it('actualiza el autor de la frase', () => {
     render(<App />);
     const newQuoteElement = screen.getByRole('button', { name: /New Quote/i});
     userEvent.click(newQuoteElement)
     const authorElement = screen.getByText(/Vince Lombardi/i);
     expect(authorElement).toBeInTheDocument();
   });
-
 })
