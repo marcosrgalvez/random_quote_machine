@@ -1,15 +1,5 @@
 import { useState } from "react";
-
-const quotes = [
-  {
-    text:'Eighty percent of success is showing up.',
-    author:'Woody Allen'
-  },
-  {
-    text: "Winning isn't everything, but wanting to win is.",
-    author: "Vince lombardi"
-  }
-]
+import { getQuote } from "./quoteService";
 
 function App() {
   interface Quote {
@@ -17,10 +7,10 @@ function App() {
     author: string
   }
 
-  const [quote,setQuote] = useState<Quote>(quotes[0])
+  const [quote,setQuote] = useState<Quote>(getQuote())
 
   const getNewQuote = () => {
-    setQuote(quotes[1])
+    setQuote(getQuote())
   }
 
 
