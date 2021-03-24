@@ -18,3 +18,9 @@ test('muestra un "boton" con la frase New quote', () => {
   const newQuoteButton = screen.getByRole('button', { name: /New Quote/i});
   expect(newQuoteButton).toBeInTheDocument();
 });
+
+test('muestra un elemento con titulo Tweet this quote', () => {
+  render(<App />);
+  const tweetElement = screen.getByTitle(/Tweet this quote!/i);
+  expect(tweetElement).toBeInTheDocument();
+});
