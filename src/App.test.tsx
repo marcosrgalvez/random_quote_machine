@@ -20,7 +20,7 @@ describe("Random quote machine", () => {
     render(<App />);
     const newQuoteElement = screen.getByRole('button', { name: /New Quote/i});
     userEvent.click(newQuoteElement)
-    const quoteElement = screen.getByText(/Winning isn’t everything, but wanting to win is./i);
+    const quoteElement = screen.getByText(/Winning isn't everything, but wanting to win is./i);
     expect(quoteElement).toBeInTheDocument();
   });
 
