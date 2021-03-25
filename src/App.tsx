@@ -8,6 +8,13 @@ import { NewQuoteButton, ButtonWrapper } from "./_components/NewQuoteButton";
 const Wrapper = styled.div`
   width: 450px;
   margin: auto;
+  margin-top: 10%;
+
+  padding: 2rem;
+
+  background-color: white;
+
+  border-radius: 3px;
 `;
 
 function App() {
