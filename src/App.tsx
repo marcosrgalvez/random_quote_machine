@@ -3,16 +3,15 @@ import { getQuote } from "./quoteService";
 
 function App() {
   interface Quote {
-    text: string,
-    author: string
+    text: string;
+    author: string;
   }
 
-  const [quote,setQuote] = useState<Quote>(getQuote())
+  const [quote, setQuote] = useState<Quote>(getQuote());
 
   const getNewQuote = () => {
-    setQuote(getQuote())
-  }
-
+    setQuote(getQuote());
+  };
 
   return (
     <>

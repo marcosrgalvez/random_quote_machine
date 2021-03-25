@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from "styled-components";
 /**
  * Inicializa estilos base
  * 1. Change from `box-sizing: content-box` so that `width` is not affected
@@ -33,4 +33,4 @@ export const reboot = css`
   strong {
     font-weight: 700;
   }
-`
+`;
