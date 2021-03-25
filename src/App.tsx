@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { getQuote } from "./quoteService";
+import { getColor, getQuote } from "./quoteService";
 import styled from "styled-components";
 import { QuoteText } from "./_components/QuoteText";
 import { QuoteAuthor } from "./_components/QuoteAuthor";
 import { NewQuoteButton, ButtonWrapper } from "./_components/NewQuoteButton";
+import { colors } from "./ui/GlobalStyles/theme";
 
 const Wrapper = styled.div`
   width: 450px;
@@ -24,17 +25,30 @@ function App() {
   }
 
   const [quote, setQuote] = useState<Quote>(getQuote());
+  const [color, setColor] = useState<string>(getColor());
 
   const getNewQuote = () => {
     setQuote(getQuote());
   };
 
+  const getNewColor = () => {
+    setColor(getColor());
+  };
+
   return (
     <Wrapper>
-      <QuoteText>{quote.text}</QuoteText>
-      <QuoteAuthor>- {quote.author}</QuoteAuthor>
+      <QuoteText color={color}>{quote.text}</QuoteText>
+      <QuoteAuthor color={color}>- {quote.author}</QuoteAuthor>
       <ButtonWrapper>
-        <NewQuoteButton onClick={getNewQuote}>New Quote</NewQuoteButton>
+        <NewQuoteButton
+          onClick={() => {
+            getNewColor();
+            getNewQuote();
+          }}
+          color={color}
+        >
+          New Quote
+        </NewQuoteButton>
       </ButtonWrapper>
     </Wrapper>
   );

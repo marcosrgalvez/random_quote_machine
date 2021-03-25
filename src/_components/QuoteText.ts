@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color } from "../ui/GlobalStyles/theme";
+import { colors } from "../ui/GlobalStyles/theme";
 
 export const QuoteText = styled.p`
   text-align: center;
@@ -7,5 +7,5 @@ export const QuoteText = styled.p`
 
   font-weight: 500;
   font-size: 1.7rem;
-  color: ${color};
+  color: ${(props) => props.color || colors[0]};
 `;

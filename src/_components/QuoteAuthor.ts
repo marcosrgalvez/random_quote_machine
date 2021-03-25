@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color } from "../ui/GlobalStyles/theme";
+import { colors } from "../ui/GlobalStyles/theme";
 
 export const QuoteAuthor = styled.p`
   margin-top: 1.25rem;
@@ -7,5 +7,5 @@ export const QuoteAuthor = styled.p`
 
   font-weight: 500;
   font-size: 1rem;
-  color: ${color};
+  color: ${(props) => props.color || colors[0]};
 `;

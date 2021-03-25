@@ -1,3 +1,5 @@
+import { colors } from "./ui/GlobalStyles/theme";
+
 const quotes = [
   {
     text: "Eighty percent of success is showing up.",
@@ -24,3 +26,4 @@ const quotes = [
 ];
 
 export const getQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
+export const getColor = () => colors[Math.floor(Math.random() * colors.length)];
