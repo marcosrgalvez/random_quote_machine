@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   margin: auto;
   margin-top: 10%;
 
-  padding: 2rem;
+  padding: 2rem 3rem;
 
   background-color: white;
 
@@ -32,7 +32,7 @@ function App() {
   return (
     <Wrapper>
       <QuoteText>{quote.text}</QuoteText>
-      <QuoteAuthor>{quote.author}</QuoteAuthor>
+      <QuoteAuthor>- {quote.author}</QuoteAuthor>
       <ButtonWrapper>
         <NewQuoteButton onClick={getNewQuote}>New Quote</NewQuoteButton>
       </ButtonWrapper>
