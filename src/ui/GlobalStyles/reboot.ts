@@ -15,7 +15,9 @@ import { css } from "styled-components";
  */
 
 export const reboot = css`
-  *,
+  * {
+    font-family: "Raleway", sans-serif;
+  }
   *::before,
   *::after {
     box-sizing: border-box; /* 1 */
