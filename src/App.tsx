@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getQuote } from "./quoteService";
 import styled from "styled-components";
+import { QuoteText } from "./_components/QuoteText";
 
 const Wrapper = styled.div`
   width: 450px;
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <Wrapper>
-      <p>{quote.text}</p>
+      <QuoteText>{quote.text}</QuoteText>
       <p>{quote.author}</p>
       <button onClick={getNewQuote}>New Quote</button>
     </Wrapper>

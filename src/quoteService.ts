@@ -1,12 +1,13 @@
 const quotes = [
-    {
-      text:'Eighty percent of success is showing up.',
-      author:'Woody Allen'
-    },
-    {
-      text: "Winning isn't everything, but wanting to win is.",
-      author: "Vince lombardi"
-    }
-]
+  {
+    text: "Eighty percent of success is showing up.",
+    author: "Woody Allen",
+  },
+  {
+    text:
+      "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do, so throw off the bowlines, sail away from safe harbor, catch the trade winds in your sails. Explore, Dream, Discover.",
+    author: "Vince lombardi",
+  },
+];
 
-export const getQuote = () => quotes[Math.floor(Math.random() * quotes.length)]
+export const getQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
