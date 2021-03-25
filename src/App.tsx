@@ -3,6 +3,7 @@ import { getQuote } from "./quoteService";
 import styled from "styled-components";
 import { QuoteText } from "./_components/QuoteText";
 import { QuoteAuthor } from "./_components/QuoteAuthor";
+import { NewQuoteButton, ButtonWrapper } from "./_components/NewQuoteButton";
 
 const Wrapper = styled.div`
   width: 450px;
@@ -25,7 +26,9 @@ function App() {
     <Wrapper>
       <QuoteText>{quote.text}</QuoteText>
       <QuoteAuthor>{quote.author}</QuoteAuthor>
-      <button onClick={getNewQuote}>New Quote</button>
+      <ButtonWrapper>
+        <NewQuoteButton onClick={getNewQuote}>New Quote</NewQuoteButton>
+      </ButtonWrapper>
     </Wrapper>
   );
 }
