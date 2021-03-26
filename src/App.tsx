@@ -6,13 +6,9 @@ import { NewQuoteButton, ButtonWrapper } from "./_components/NewQuoteButton";
 import { getColor } from "./colorService";
 import { createGlobalStyle } from "styled-components";
 import { Wrapper } from "./_components/Wrapper";
+import { Quote } from "./model/quoteInterface";
 
 function App() {
-  interface Quote {
-    text: string;
-    author: string;
-  }
-
   const [quote, setQuote] = useState<Quote>(getQuote());
   const [color, setColor] = useState(getColor());
 
