@@ -12,16 +12,18 @@ interface QuteBoxProps {
 }
 
 function QuoteBox(props: QuteBoxProps) {
-  const [quote, setQuote] = useState<Quote>(getQuote());
+  const [quote, setQuote] = useState<Quote>(getQuote({ text: "", author: "" }));
 
   const getNewQuote = () => {
-    setQuote(getQuote());
+    setQuote(getQuote(quote));
     props.setColor(getColor());
   };
 
   return (
     <>
-      <QuoteText theme={{ color: props.color }}>{quote.text}</QuoteText>
+      <QuoteText title="quote" theme={{ color: props.color }}>
+        {quote.text}
+      </QuoteText>
       <QuoteAuthor theme={{ color: props.color }}>- {quote.author}</QuoteAuthor>
       <ButtonWrapper>
         <NewQuoteButton theme={{ bgcolor: props.color }} onClick={getNewQuote}>

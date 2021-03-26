@@ -1,3 +1,5 @@
+import { Quote } from "../model/quoteInterface";
+
 const quotes = [
   {
     text: "Eighty percent of success is showing up.",
@@ -10,6 +12,10 @@ const quotes = [
   },
 ];
 
-export const getQuote = () => {
-  return quotes[Math.floor(Math.random() * quotes.length)];
+export const getQuote = (oldQuote: Quote) => {
+  let newQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  while (oldQuote === newQuote) {
+    newQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  }
+  return newQuote;
 };
