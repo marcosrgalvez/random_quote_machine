@@ -8,7 +8,6 @@ export const GlobalStyles = createGlobalStyle`
     
     body{
         font-family: 'Raleway', sans-serif;
-        
-        background-color: "#16A085"
+        transition: background-color 300ms linear;
     }
 `;

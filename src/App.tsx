@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getQuote } from "./quoteService";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { QuoteText } from "./_components/QuoteText";
 import { QuoteAuthor } from "./_components/QuoteAuthor";
 import { NewQuoteButton, ButtonWrapper } from "./_components/NewQuoteButton";
@@ -32,18 +32,22 @@ function App() {
     setQuote(getQuote());
   };
 
+  const BodyBgColor = createGlobalStyle`
+    body {
+      background-color: ${color}
+    }
+  `;
+
   return (
     <Wrapper>
       <QuoteText theme={{ color: color }}>{quote.text}</QuoteText>
       <QuoteAuthor theme={{ color: color }}>- {quote.author}</QuoteAuthor>
       <ButtonWrapper>
-        <NewQuoteButton
-          theme={{ background_color: color }}
-          onClick={getNewQuote}
-        >
+        <NewQuoteButton theme={{ bgcolor: color }} onClick={getNewQuote}>
           New Quote
         </NewQuoteButton>
       </ButtonWrapper>
+      <BodyBgColor />
     </Wrapper>
   );
 }

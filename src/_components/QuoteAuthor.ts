@@ -5,6 +5,7 @@ export const QuoteAuthor = styled.p`
   text-align: right;
 
   color: ${(props) => props.theme.color};
+  transition: color 300ms linear;
 
   font-weight: 500;
   font-size: 1rem;
