@@ -1,6 +1,4 @@
-import { colors } from "../ui/GlobalStyles/theme";
-
-const quotes = [
+export const quotes = [
   {
     text: "Eighty percent of success is showing up.",
     author: "Woody Allen",
@@ -12,5 +10,5 @@ const quotes = [
   },
 ];
 
-export const getQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
-export const getColor = () => colors[Math.floor(Math.random() * colors.length)];
+export const getQuote = (quotes: any) =>
+  quotes[Math.floor(Math.random() * quotes.length)];
