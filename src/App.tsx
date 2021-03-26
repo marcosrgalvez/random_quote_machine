@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { QuoteText } from "./_components/QuoteText";
 import { QuoteAuthor } from "./_components/QuoteAuthor";
 import { NewQuoteButton, ButtonWrapper } from "./_components/NewQuoteButton";
-import { colors } from "./ui/GlobalStyles/theme";
 
 const Wrapper = styled.div`
   width: 450px;
