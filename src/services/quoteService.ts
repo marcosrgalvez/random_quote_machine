@@ -1,3 +1,5 @@
+import { Quote } from "../model/quoteInterface";
+
 export const quotes = [
   {
     text: "Eighty percent of success is showing up.",
@@ -10,5 +12,5 @@ export const quotes = [
   },
 ];
 
-export const getQuote = (quotes: any) =>
+export const getQuote = (quotes: [Quote]) =>
   quotes[Math.floor(Math.random() * quotes.length)];
