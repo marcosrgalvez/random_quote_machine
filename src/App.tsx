@@ -1,22 +1,11 @@
 import { useState } from "react";
 import { getQuote } from "./quoteService";
-import styled, { createGlobalStyle } from "styled-components";
 import { QuoteText } from "./_components/QuoteText";
 import { QuoteAuthor } from "./_components/QuoteAuthor";
 import { NewQuoteButton, ButtonWrapper } from "./_components/NewQuoteButton";
 import { getColor } from "./colorService";
-
-const Wrapper = styled.div`
-  width: 450px;
-  margin: auto;
-  margin-top: 10%;
-
-  padding: 2rem 3rem;
-
-  background-color: white;
-
-  border-radius: 3px;
-`;
+import { createGlobalStyle } from "styled-components";
+import { Wrapper } from "./_components/Wrapper";
 
 function App() {
   interface Quote {
