@@ -1,2 +1,2 @@
-import { colors } from "./ui/GlobalStyles/theme";
+import { colors } from "../ui/GlobalStyles/theme";
 export const getColor = () => colors[Math.floor(Math.random() * colors.length)];

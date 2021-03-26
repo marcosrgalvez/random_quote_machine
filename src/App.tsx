@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { getQuote } from "./quoteService";
+import { getQuote } from "./services/quoteService";
 import { QuoteText } from "./_components/QuoteText";
 import { QuoteAuthor } from "./_components/QuoteAuthor";
 import { NewQuoteButton, ButtonWrapper } from "./_components/NewQuoteButton";
-import { getColor } from "./colorService";
+import { getColor } from "./services/colorService";
 import { createGlobalStyle } from "styled-components";
 import { Wrapper } from "./_components/Wrapper";
 import { Quote } from "./model/quoteInterface";
