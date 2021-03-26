@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
-import * as quoteService from "./quoteService";
+import * as quoteService from "./services/quoteService";
 
 describe("Random quote machine", () => {
   it("muestra una frase", () => {

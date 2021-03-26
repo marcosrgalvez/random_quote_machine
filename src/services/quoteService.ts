@@ -1,4 +1,4 @@
-import { colors } from "./ui/GlobalStyles/theme";
+import { colors } from "../ui/GlobalStyles/theme";
 
 const quotes = [
   {
