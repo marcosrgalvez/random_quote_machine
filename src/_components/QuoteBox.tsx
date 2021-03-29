@@ -1,9 +1,9 @@
-import { QuoteText } from "./QuoteText";
-import { QuoteAuthor } from "./QuoteAuthor";
+import { QuoteText } from "./styles/QuoteText";
+import { QuoteAuthor } from "./styles/QuoteAuthor";
 import { useEffect, useState } from "react";
 import { getQuote } from "../services/quoteService";
 import { Quote } from "../model/quoteInterface";
-import { NewQuoteButton, ButtonWrapper } from "./NewQuoteButton";
+import { NewQuoteButton, ButtonWrapper } from "./styles/NewQuoteButton";
 import { TwitterLink } from "./TwitterLink";
 import { getColor } from "../services/colorService";
 
@@ -28,7 +28,7 @@ function QuoteBox(props: QuoteBoxProps) {
 
   const getNewQuote = () => {
     setQuote(getQuote(quote));
-    props.setColor(getColor());
+    props.setColor(getColor(props.color));
   };
 
   return (

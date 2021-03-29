@@ -1,22 +1,15 @@
 import { useState } from "react";
-import { createGlobalStyle } from "styled-components";
-import { Wrapper } from "./_components/Wrapper";
+import { Wrapper } from "./_components/styles//Wrapper";
 import QuoteBox from "./_components/QuoteBox";
 import { getColor } from "./services/colorService";
 
 function App(this: any) {
-  const [color, setColor] = useState(getColor());
-
-  const BodyBgColor = createGlobalStyle`
-    body {
-      background-color: ${color}
-      
-    }`;
+  const [color, setColor] = useState(getColor(""));
+  document.body.style.backgroundColor = color;
 
   return (
     <Wrapper>
       <QuoteBox color={color} setColor={setColor} />
-      <BodyBgColor />
     </Wrapper>
   );
 }
