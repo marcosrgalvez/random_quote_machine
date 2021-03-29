@@ -4,7 +4,6 @@ import App from "./App";
 import { Quote } from "./model/quoteInterface";
 import * as quoteService from "./services/quoteService";
 import { getQuote } from "./services/quoteService";
-import QuoteBox from "./_components/QuoteBox";
 
 describe("Funcionamiento correcto de los servicios", () => {
   it("devuelve siempre una frase distinta a la anterior", () => {
