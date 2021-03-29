@@ -29,6 +29,13 @@ function QuoteBox(props: QuteBoxProps) {
         <NewQuoteButton theme={{ bgcolor: props.color }} onClick={getNewQuote}>
           New Quote
         </NewQuoteButton>
+        <a
+          href="https://twitter.com/intent/tweet"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Tweet this quote!
+        </a>
       </ButtonWrapper>
     </>
   );

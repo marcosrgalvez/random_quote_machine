@@ -4,6 +4,7 @@ import App from "./App";
 import { Quote } from "./model/quoteInterface";
 import * as quoteService from "./services/quoteService";
 import { getQuote } from "./services/quoteService";
+import QuoteBox from "./_components/QuoteBox";
 
 describe("Funcionamiento correcto de los servicios", () => {
   it("devuelve siempre una frase distinta a la anterior", () => {
@@ -30,6 +31,15 @@ describe("Random quote machine", () => {
       newText = screen.getByTitle("quote").innerHTML;
       expect(oldText).not.toBe(newText);
     }
+  });
+
+  it("abre twitter", () => {
+    render(<App />);
+    const linkElement = screen.getByRole("link", { name: /Tweet this quote/i });
+    expect(linkElement).toHaveAttribute(
+      "href",
+      "https://twitter.com/intent/tweet"
+    );
   });
 
   it("muestra una frase", () => {
