@@ -3,7 +3,8 @@ import { QuoteAuthor } from "./QuoteAuthor";
 import { useState } from "react";
 import { getQuote } from "../services/quoteService";
 import { Quote } from "../model/quoteInterface";
-import { NewQuoteButton, ButtonWrapper, TwitterLink } from "./NewQuoteButton";
+import { NewQuoteButton, ButtonWrapper } from "./NewQuoteButton";
+import { TwitterLink } from "./TwitterLink";
 import { getColor } from "../services/colorService";
 
 interface QuteBoxProps {
@@ -45,7 +46,12 @@ function QuoteBox(props: QuteBoxProps) {
         >
           New Quote
         </NewQuoteButton>
-        <TwitterLink href={twitterLink} target="_blank" rel="noreferrer">
+        <TwitterLink
+          href={twitterLink}
+          target="_blank"
+          rel="noreferrer"
+          theme={{ bgcolor: props.color }}
+        >
           Tweet this quote!
         </TwitterLink>
       </ButtonWrapper>

@@ -25,8 +25,6 @@ export const NewQuoteButton = styled.button`
   }
 `;
 
-export const TwitterLink = styled.a``;
-
 export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row-reverse;
