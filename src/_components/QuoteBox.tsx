@@ -7,12 +7,12 @@ import { NewQuoteButton, ButtonWrapper } from "./NewQuoteButton";
 import { TwitterLink } from "./TwitterLink";
 import { getColor } from "../services/colorService";
 
-interface QuteBoxProps {
+interface QuoteBoxProps {
   color: string;
   setColor: any;
 }
 
-function QuoteBox(props: QuteBoxProps) {
+function QuoteBox(props: QuoteBoxProps) {
   const [quote, setQuote] = useState<Quote>(getQuote({ text: "", author: "" }));
   const [twitterLink, setTwitterLink] = useState<string>(
     "https://twitter.com/intent/tweet?text=" +
