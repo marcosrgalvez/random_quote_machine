@@ -8,7 +8,18 @@ export const TwitterLink = styled.a`
 
   font-size: 0.85rem;
   color: white;
+  text-decoration: none;
 
   background-color: ${(props) => props.theme.bgcolor};
   transition: background-color 300ms linear;
+
+  &:hover {
+    transition: opacity 150ms linear;
+    opacity: 0.9;
+    border: none;
+  }
+
+  &:focus {
+    outline: 0;
+  }
 `;
