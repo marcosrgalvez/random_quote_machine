@@ -33,15 +33,6 @@ describe("Random quote machine", () => {
     }
   });
 
-  it("abre twitter", () => {
-    render(<App />);
-    const linkElement = screen.getByRole("link", { name: /Tweet this quote/i });
-    expect(linkElement).toHaveAttribute(
-      "href",
-      "https://twitter.com/intent/tweet"
-    );
-  });
-
   it("muestra una frase", () => {
     jest.spyOn(quoteService, "getQuote").mockReturnValue({
       text: "Eighty percent of success is showing up.",
@@ -110,5 +101,18 @@ describe("Random quote machine", () => {
     userEvent.click(newQuoteElement);
     const authorElement = screen.getByText(/Vince Lombardi/i);
     expect(authorElement).toBeInTheDocument();
+  });
+
+  it("twittea la cita", () => {
+    jest.spyOn(quoteService, "getQuote").mockReturnValueOnce({
+      text: "Eighty percent of success is showing up.",
+      author: "Woody Allen",
+    });
+    render(<App />);
+    const linkElement = screen.getByRole("link", { name: /Tweet this quote/i });
+    expect(linkElement).toHaveAttribute(
+      "href",
+      "https://twitter.com/intent/tweet?text=Eighty%20percent%20of%20success%20is%20showing%20up.%20Woody%20Allen"
+    );
   });
 });

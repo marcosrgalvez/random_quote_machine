@@ -25,8 +25,11 @@ export const NewQuoteButton = styled.button`
   }
 `;
 
+export const TwitterLink = styled.a``;
+
 export const ButtonWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
 `;
