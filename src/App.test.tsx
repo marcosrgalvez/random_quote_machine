@@ -115,4 +115,28 @@ describe("Random quote machine", () => {
       "https://twitter.com/intent/tweet?text=Eighty%20percent%20of%20success%20is%20showing%20up.%20Woody%20Allen"
     );
   });
+
+  it("actualiza el link para twittear la cita", () => {
+    jest
+      .spyOn(quoteService, "getQuote")
+      .mockReturnValueOnce({
+        text:
+          "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do, so throw off the bowlines, sail away from safe harbor, catch the trade winds in your sails. Explore, Dream, Discover.",
+        author: "Vince Lombardi",
+      })
+      .mockReturnValueOnce({
+        text: "Eighty percent of success is showing up.",
+        author: "Woody Allen",
+      });
+    render(<App />);
+    expect(screen.getByText(/Vince Lombardi/i)).toBeInTheDocument();
+    const newQuoteElement = screen.getByRole("button", { name: /New Quote/i });
+    userEvent.click(newQuoteElement);
+    expect(screen.getByText(/Woody Allen/i)).toBeInTheDocument();
+    const linkElement = screen.getByRole("link", { name: /Tweet this quote/i });
+    expect(linkElement).toHaveAttribute(
+      "href",
+      "https://twitter.com/intent/tweet?text=Eighty%20percent%20of%20success%20is%20showing%20up.%20Woody%20Allen"
+    );
+  });
 });

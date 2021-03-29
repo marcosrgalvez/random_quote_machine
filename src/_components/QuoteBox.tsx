@@ -1,6 +1,6 @@
 import { QuoteText } from "./QuoteText";
 import { QuoteAuthor } from "./QuoteAuthor";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getQuote } from "../services/quoteService";
 import { Quote } from "../model/quoteInterface";
 import { NewQuoteButton, ButtonWrapper } from "./NewQuoteButton";
@@ -19,15 +19,16 @@ function QuoteBox(props: QuteBoxProps) {
       (quote.text + " " + quote.author).replaceAll(" ", "%20")
   );
 
+  useEffect(() => {
+    setTwitterLink(
+      "https://twitter.com/intent/tweet?text=" +
+        (quote.text + " " + quote.author).replaceAll(" ", "%20")
+    );
+  }, [quote]);
+
   const getNewQuote = () => {
     setQuote(getQuote(quote));
     props.setColor(getColor());
-  };
-
-  const updateTweetLink = (quote: Quote) => {
-    let url = "https://twitter.com/intent/tweet?text=";
-    url += (quote.text + " " + quote.author).replaceAll(" ", "%20");
-    setTwitterLink(url);
   };
 
   return (
@@ -37,13 +38,7 @@ function QuoteBox(props: QuteBoxProps) {
       </QuoteText>
       <QuoteAuthor theme={{ color: props.color }}>- {quote.author}</QuoteAuthor>
       <ButtonWrapper>
-        <NewQuoteButton
-          theme={{ bgcolor: props.color }}
-          onClick={() => {
-            getNewQuote();
-            updateTweetLink(quote);
-          }}
-        >
+        <NewQuoteButton theme={{ bgcolor: props.color }} onClick={getNewQuote}>
           New Quote
         </NewQuoteButton>
         <TwitterLink
