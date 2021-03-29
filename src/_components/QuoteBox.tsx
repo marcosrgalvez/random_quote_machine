@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getQuote } from "../services/quoteService";
 import { Quote } from "../model/quoteInterface";
 import { NewQuoteButton, ButtonWrapper } from "./styles/NewQuoteButton";
-import { TwitterLink } from "./TwitterLink";
+import { TwitterLink } from "./styles/TwitterLink";
 import { getColor } from "../services/colorService";
 
 interface QuoteBoxProps {
